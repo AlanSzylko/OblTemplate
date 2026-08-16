@@ -17,6 +17,29 @@
 - Ejemplo: Implementamos ... Bug: ... Lo corregimos ...
 - Pasan los casos de prueba 1 a 4 del ejercicio 6.
 
+## Justificación de órdenes
+
+> Completar solo para los ejercicios cuya letra plantea restricciones de órdenes
+> (tiempo o espacio): justificar brevemente por qué la solución cumple, indicando
+> qué estructuras de datos o algoritmos se utilizaron. Ejemplo: "La letra exige
+> inserción en O(log n); usamos un min-heap sobre arreglo, donde flotar/hundir
+> recorren a lo sumo la altura del árbol".
+
+### Ejercicio 6
+- ...
+
+### Ejercicio 7
+- ...
+
+### Ejercicio 8
+- ...
+
+### Ejercicio 9
+- ...
+
+### Ejercicio 10
+- ...
+
 ## Resultados de los casos de prueba
 
 > Valores posibles: **Completo** (pasan todas las pruebas) / **Parcial** (pasan algunas) /
