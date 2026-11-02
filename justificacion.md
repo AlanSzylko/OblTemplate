@@ -11,7 +11,11 @@
 - Sin restricciones de órdenes. / Justificación: ...
 
 ## Ejercicio 7
-- Sin restricciones de órdenes. / Justificación: ...
+- La letra exige dividir y conquistar, O(N log N) en tiempo y O(N) en espacio.
+- Justificación: se usa un merge sort sobre los dorsales en orden de llegada. El árbol de
+  recursión tiene log N niveles y en cada nivel el intercalar recorre los N elementos, y el
+  conteo de remontadas épicas se hace dentro de ese mismo intercalar, aprovechando que
+  ambas mitades ya están ordenadas.
 
 ## Ejercicio 8
 - Sin restricciones de órdenes. / Justificación: ...

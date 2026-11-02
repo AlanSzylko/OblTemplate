@@ -16,3 +16,24 @@
 ## AAAA-MM-DD — En conjunto
 - Ejemplo: Implementamos ... Bug: ... Lo corregimos ...
 - Pasan los casos de prueba 1 a 4 del ejercicio 6.
+
+## 2026-10-28 — Tiago
+- Hice el ejercicio 7 completo con el merge sort que se habló en clase. Lo modifiqué para
+  que lleve un contador por referencia que se va actualizando (cantidad de *remontadas
+  épicas*). Modifiqué el intercalar original del mergeSort para que detecte una remontada
+  épica. En las compilaciones iniciales contaba mal las remontadas porque me faltaba la
+  condición `arr1[r] > arr2[j]*2` dentro del while.
+- Usé Claude para resolver errores de compilación del cin y el cout; me ayudó a darme
+  cuenta de que faltaba el `using namespace std`.
+
+## 2026-11-02 — Alan
+- Leí la letra del ejercicio 8. Al principio confundí las 4 categorías con la cantidad de
+  productos: hice los arrays de peso y satisfacción de tamaño 4 e indexados por categoría,
+  y me di cuenta de que con varios productos de la misma categoría
+  se pisaban entre ellos y perdía datos. Lo rehice con tres arrays de tamaño N
+  (peso, satisfacción, categoría) indexados por número de producto.
+- Dibujé el árbol de decisiones sobre el input 3 para entender el estado: en cada nodo hay
+  que llevar el producto actual, el peso libre y los cuatro cupos restantes. La satisfacción no es
+  parte del estado, es lo que devuelve cada nodo.
+  Quedo terminado el ej 8.
+
