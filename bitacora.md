@@ -37,3 +37,13 @@
   parte del estado, es lo que devuelve cada nodo.
   Quedo terminado el ej 8.
 
+## 2026-11-10 - Tiago
+- Hice el ejercicio 6 completo. Lo encontré bastante intuitivo. Me di cuenta bastante rápido que
+  la forma de respetar el O(n) era con un array de largo 1001. También que la forma de imprimir el 
+  numero capicúa podía hacerlo con un array de largo n el cual guardaba en orden decreciente los numeros
+  de cantidad par. De esta forma podía recorrerlo para un lado y para el otro, y formar el output capícua.
+- En la primera pasada de ejecución de test se me colgaba por un loop infinito. Le pedi a claude ayuda para
+  encontrarlo, resultó ser que como copié y pegue los for, el que va decrementando me quedo incrementando (i++).
+  Otra simplificación que me sugerió Claude y decidí implementarla fue, en vez de crear un string
+  retorno e ir concatenando todos los números con un to_string, simplemente ir haciendo cout de los números.
+
