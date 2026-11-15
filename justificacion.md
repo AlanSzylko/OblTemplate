@@ -18,7 +18,9 @@
   ambas mitades ya están ordenadas.
 
 ## Ejercicio 8
-- Sin restricciones de órdenes. / Justificación: ...
+- La letra exige programación dinámica con tabulación, tiempo y espacio
+  O(N · W · L₀ · L₁ · L₂ · L₃).
+- Justificación: el estado del problema son seis datos (el producto que se está mirando, el peso libre de la heladera y los cuatro cupos restantes), así que la tabla tiene una dimensión por cada uno, de tamaños N+1, W+1 y Lₖ+1. Eso da el orden espacial pedido. Se llena con seis ciclos anidados, una celda por estado, y cada celda se resuelve en tiempo constante: lee dos celdas ya calculadas de la fila i+1 (saltear el producto o comprarlo) y se queda con el máximo. Una celda por estado y trabajo constante en cada una da el orden temporal pedido.
 
 ## Ejercicio 9
 - Sin restricciones de órdenes. / Justificación: ...

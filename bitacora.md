@@ -47,3 +47,17 @@
   Otra simplificación que me sugerió Claude y decidí implementarla fue, en vez de crear un string
   retorno e ir concatenando todos los números con un to_string, simplemente ir haciendo cout de los números.
 
+
+## 2026-11-15 — Alan
+- Pasé el ejercicio 8 de la versión recursiva (que era fuerza bruta, O(2^N)) a programación
+  dinámica con tabulación. Los seis parámetros de la recursión pasaron a ser las seis
+  dimensiones de la tabla, y las llamadas recursivas a `i+1` pasaron a ser lecturas de
+  celdas de la fila i+1.
+- Decisión: la tabla se recorre con el ciclo de productos hacia atrás (de cantProd-1 a 0),
+  porque cada celda depende de celdas con i+1. La fila i == cantProd queda en 0 y es el caso
+  base; inicializar el arreglo con `new int[...]()` ya la deja resuelta.
+- La guardé en un arreglo plano con una función `pos()` que calcula la posición a partir del
+  estado, porque en C++ no se puede declarar un arreglo de 6 dimensiones con tamaños que se
+  conocen recién al leer la entrada.
+- Verificación: da los 4 ejemplos de la letra (16, 14, 9, 0) y además lo comparamos contra
+  la versión recursiva anterior en 3000 casos chicos generados al azar; coinciden en todos.
