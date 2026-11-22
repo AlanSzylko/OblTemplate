@@ -9,13 +9,6 @@
 > abiertas. Si se usó IA ese día, indicar herramienta, consulta y qué se hizo con la
 > respuesta. Una bitácora escrita íntegramente el día de la entrega implica pérdida de puntos.
 
-## AAAA-MM-DD — Nombre
-- Ejemplo: Leí la letra del ejercicio 6. Primera idea: ... pero la restricción de
-  complejidad pide ..., así que ...
-
-## AAAA-MM-DD — En conjunto
-- Ejemplo: Implementamos ... Bug: ... Lo corregimos ...
-- Pasan los casos de prueba 1 a 4 del ejercicio 6.
 
 ## 2026-10-28 — Tiago
 - Hice el ejercicio 7 completo con el merge sort que se habló en clase. Lo modifiqué para
@@ -61,3 +54,41 @@
   conocen recién al leer la entrada.
 - Verificación: da los 4 ejemplos de la letra (16, 14, 9, 0) y además lo comparamos contra
   la versión recursiva anterior en 3000 casos chicos generados al azar; coinciden en todos.
+
+## 2026-11-22 — Alan
+- Revisé el ejercicio 7, que ya estaba hecho por Tiago y pasaba los ejemplos perfecto, contra las
+  restricciones de la letra, y encontré dos incumplimientos. El `while` que estaba dentro del
+  `intercalar` recorría todo lo que quedaba de la mitad izquierda por cada elemento tomado de
+  la derecha, lo que hace el algoritmo cuadrático y no el O(N log N) pedido. Y el contador era
+  `int`, cuando la letra avisa que la cantidad de remontadas se pasa de 32 bits.
+- Saqué el conteo del `intercalar` a una función aparte con dos punteros.
+  Como la mitad izquierda está ordenada, si un elemento supera el doble todos los siguientes
+  también, así que la cantidad sale de una resta. Y como la mitad derecha también está
+  ordenada, el umbral solo crece y el puntero nunca vuelve para atrás: el conteo queda lineal.
+- Cambié el contador a `long long` en la declaración y en los dos parámetros por referencia, y
+  agregué los `delete[]` de los arreglos intermedios del mergeSort para cumplir el O(N) espacial.
+- Pruebas: pasa los 5 ejemplos de la letra y el caso de un solo corredor.
+- Usé Claude para esta revisión: le pedí que chequeara el ejercicio contra las restricciones de
+  la letra, me señaló los dos problemas.
+
+
+## 2026-11-22 — Alan(tanda 2)
+- Leí la letra del ejercicio 9. Lo que hay que arrastrar es la ronda, la
+  ventaja de goles de A sobre B, y si el Pato bailó en el tiro anterior. En cada ronda primero
+  patea A (la ventaja sube según a[i]) y después se decide: bailar suma likes pero B convierte
+  y la ventaja baja uno, o no bailar y la ventaja queda igual. Bailar solo es legal si después
+  la ventaja no queda negativa, o sea si ventaja + a[i] >= 1, que es la regla del DT.
+- Verifiqué el modelo a mano con el Input 4 reconstruyendo el marcador ronda por ronda.
+- Problema con la restricción de órdenes: la letra pide O(K) pero el estado necesita la ventaja,
+  que tiene rango 0..K, así que quedan K*(K+1)*2 estados, O(K²). Probé si la ventaja se podía
+  acotar a una constante chica y no: construí casos con m goles al principio y m tiros caros al
+  final, donde el Pato tiene que ahorrar ventaja, y el tope necesario crece con K (con K=40
+  hace falta 11). Queda la duda abierta para preguntarle al docente; mientras tanto
+  implementamos la versión O(K²), que con K=1000 corre en 160 ms.
+- Implementación con memoización: función recursiva sobre (ronda, ventaja, bailó antes) y un
+  arreglo de memo inicializado en -1 como marca de "sin calcular", que sirve porque los likes
+  son siempre >= 1 y ningún resultado legítimo es negativo.
+- Pruebas: pasa los 5 ejemplos de la letra, dos casos borde con K=1, y 800 casos random
+  contrastados contra la fuerza bruta.
+- Usé Claude en esta sesión: para interpretar la letra, para verificar si la ventaja se podía
+  acotar (hizo los experimentos con los contraejemplos).

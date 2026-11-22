@@ -13,6 +13,10 @@ int* categoria;
 int cupos[4];
 int D1, D2, D3, D4, D5;
 
+// Conversion de la recursion a tabulacion e indexado del arreglo plano hechos con
+// Claude, sobre el modelo del estado que razonamos nosotros. La tabla es
+// conceptualmente de 6 dimensiones y se guarda plana porque en C++ no se pueden
+// declarar arreglos multidimensionales con tamanos conocidos en tiempo de ejecucion.
 int pos(int i, int w, int r0, int r1, int r2, int r3)
 {
     return ((((i * D1 + w) * D2 + r0) * D3 + r1) * D4 + r2) * D5 + r3;
