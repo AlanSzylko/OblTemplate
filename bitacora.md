@@ -117,4 +117,6 @@
   puede haber varias. Pasamos las letras a números y nos quedamos con la menor. 
 - Por último lo adapté para leer varias veces y lo imprimí con el formato de la letra.
 - Claude generó tests para comprobar que el backtracking coincide con los resultados de fuerza bruta.
+  También me ayudó para explicar el Orden del ejercicio, ya que no estaba seguro si poniendo peor caso
+  O(10!/(10−L)!) era suficiente.
 

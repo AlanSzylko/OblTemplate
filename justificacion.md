@@ -35,22 +35,28 @@
 - Justificación: el estado del problema son seis datos (el producto que se está mirando, el peso libre de la heladera y los cuatro cupos restantes), así que la tabla tiene una dimensión por cada uno, de tamaños N+1, W+1 y Lₖ+1. Eso da el orden espacial pedido. Se llena con seis ciclos anidados, una celda por estado, y cada celda se resuelve en tiempo constante: lee dos celdas ya calculadas de la fila i+1 (saltear el producto o comprarlo) y se queda con el máximo. Una celda por estado y trabajo constante en cada una da el orden temporal pedido.
 
 ## Ejercicio 9
-- La letra exige programación dinámica con memoización, tiempo y espacio O(K).
-- Nuestra solución es O(K²) en tiempo y espacio, y lo declaramos explícitamente.
-  Justificación del orden alcanzado: el estado es (ronda, ventaja de goles de A sobre B, si
-  bailó en el tiro anterior). La ventaja es necesaria porque la regla de que A nunca quede
-  abajo no es local: el Pato puede ahorrar goles de ventaja en rondas tempranas para gastarlos
-  bailando en rondas donde A erra. Como la ventaja tiene rango 0..K, quedan K·(K+1)·2 estados,
-  cada uno resuelto en tiempo constante (dos opciones: bailar o no), de donde sale el O(K²).
-- Verificamos que la ventaja no se puede acotar a una constante: con m goles al principio y m
-  tiros de likes altos al final, el tope de ventaja necesario para alcanzar el óptimo crece
-  linealmente con K (con K = 40 hace falta un tope de 11). Por eso no encontramos cómo sacarla
-  del estado y llegar a O(K).
+- La letra exige programación dinámica con memoización, tiempo y espacio O(K²).
+- Justificación: el estado es (ronda, ventaja de goles de A sobre B, si bailó en el tiro
+  anterior). La ventaja es necesaria porque la regla de que A nunca quede abajo no es
+  local, el Pato puede ahorrar ventaja en rondas tempranas para gastarla bailando más
+  adelante. Como la ventaja va de 0 a K, quedan K·(K+1)·2 estados, cada uno resuelto en
+  tiempo constante (bailar o no bailar): O(K²) en tiempo, y la tabla de memo ocupa O(K²).
 - En la práctica, con K = 1000 la solución corre en unos 150 ms.
 
 ## Ejercicio 10
-- La letra exige backtracking y que la solución realice las podas posibles. No fija una
-  restricción de orden temporal, pero pide que cada test se resuelva en el orden de los
-  segundos, y avisa que con 10 cifras un número puede superar el rango de un entero de
-  32 bits.
-- Justificación: Flta
+- La letra exige backtracking y que la solución realice las podas posibles. No fija un
+  orden temporal, pero pide que cada test se resuelva en el orden de los segundos, y avisa
+  que con 10 cifras un número puede superar el rango de un entero de 32 bits.
+- Justificación: se resuelve la suma columna por columna desde las unidades, asignando un
+  dígito a cada letra y volviendo atrás cuando algo no cierra. Podas: la letra del resultado
+  no se prueba sino que se deduce de (suma + acarreo) % 10, y si no coincide se corta la rama
+  en esa columna; no se repiten dígitos; no se prueba 0 en letras iniciales de palabras
+  largas; si un sumando es más largo que el resultado se responde "imposible" sin buscar; y
+  si se terminan las columnas con acarreo sobrante no quedan movimientos válidos.
+- En el peor caso se exploran asignaciones de hasta 10 letras a 10 dígitos (como mucho 10!
+  por acertijo), pero con las podas cada acertijo se resuelve en milisegundos. No se corta
+  en la primera solución porque hay que imprimir la menor: se recorren todas y se guarda la
+  menor por resultado y después por sumandos en orden. Los valores se calculan en long long.
+- Espacio O(1): arreglos de tamaño fijo (26 letras, 10 dígitos, tabla de 5 x 10), más la pila
+  de recursión, que tiene como mucho una llamada por letra de cada columna.
+- En la práctica, 100 acertijos de 5 sumandos de 10 letras tardan alrededor de 1 segundo.
