@@ -22,11 +22,13 @@ int letraActual(int sumando, int col) {
     return letraResultadoColumna[col];
 }
 
-bool esSolucion(int col) {
-    return col == cantCols;
+bool esSolucion(int col, int acarreo) {
+    return col == cantCols && acarreo == 0;
 }
 
+
 bool puedoAplicarMovimiento(int sumando, int col, int suma, int acarreo, int d) {
+    if (col == cantCols) return false;
     int L = letraActual(sumando, col);
     if (sumando == K && d != (suma + acarreo) % 10) return false;
     if (L == -1) return d == 0;
@@ -64,16 +66,14 @@ bool esMenor(long long actual[]) {
 
 // Función principal de backtracking
 void backtracking(int sumando, int col, int suma, int acarreo) {
-    if (esSolucion(col)) {
-         if (acarreo == 0) {
+    if (esSolucion(col, acarreo)) {
         long long actual[6];
-        for (int w = 0; w < K; w++) actual[w] = numero(palabras[w]); 
-        actual[K] = numero(resultado);                                
-        if (!hayMejor || esMenor(actual)) {         
+        for (int j = 0; j < K; j++) actual[j] = numero(palabras[j]);
+        actual[K] = numero(resultado);
+        if (!hayMejor || esMenor(actual)) {
             for (int i = 0; i <= K; i++) mejor[i] = actual[i];
             hayMejor = true;
         }
-    }
     } else {
         for (int d = 0; d <= 9; d++) {
             if (puedoAplicarMovimiento(sumando, col, suma, acarreo, d)) {

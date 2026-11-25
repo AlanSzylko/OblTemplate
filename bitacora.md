@@ -100,3 +100,13 @@
   mano, probando dígitos para las letras de los sumandos y deduciendo la letra del resultado con 
   (suma + acarreo) % 10. Así podemos podar apenas una columna no cierra, en vez de llenar todas las 
   letras y verificar al final. Inclui el template de backtracking visto en clase.
+
+## 2026-11-25 — Tiago
+- Terminé con el ejercicio 10. La idea es la que decidimos en la entrada anterior, columna
+  por columna, de derecha a izquierda, probando números para las letras y volviendo
+  atrás cuando algo no cierra.
+- Para el puedoAplicarMovimiento le pedí ayuda a Claude ya que me estaban faltando casos, 
+  y quedaba mal el backtracking. Después faltaba elegir cuál solución imprimir, porque 
+  puede haber varias. Pasamos las letras a números y nos quedamos con la menor. 
+- Por último lo adapté para leer varias veces y lo imprimí con el formato de la letra.
+- Claude generó tests para comprobar que el backtracking coincide con los resultados de fuerza bruta.
