@@ -1,14 +1,6 @@
 # Bitácora — Obligatorio 2
 
-**Integrantes:** Nombre Apellido (Nº estudiante), Nombre Apellido (Nº estudiante)
-
-> **Instrucciones** (borrar esta sección antes de entregar): agregar una entrada por
-> cada día trabajado, indicando la fecha y quién trabajó (un integrante o "En conjunto").
-> Registrar el proceso real: ideas exploradas, decisiones y su justificación, partes de
-> implementaciones, bugs encontrados y cómo se corrigieron, resultados de pruebas y dudas
-> abiertas. Si se usó IA ese día, indicar herramienta, consulta y qué se hizo con la
-> respuesta. Una bitácora escrita íntegramente el día de la entrega implica pérdida de puntos.
-
+**Integrantes:** Alan Szylkowski (290025), Tiago Fuhrman (290103)
 
 ## 2026-10-28 — Tiago
 - Hice el ejercicio 7 completo con el merge sort que se habló en clase. Lo modifiqué para
@@ -92,3 +84,18 @@
   contrastados contra la fuerza bruta.
 - Usé Claude en esta sesión: para interpretar la letra, para verificar si la ventaja se podía
   acotar (hizo los experimentos con los contraejemplos).
+
+## 2026-11-25 — Alan
+- Repasé la devolución del obligatorio 1 y las consignas del 2 punto por punto contra lo que
+  tenemos entregable.
+- Revisión de formato de salida: encontré que el ejercicio 6 imprimía un espacio sobrante al
+  final del cartel, porque el separador iba después de cada número en lugar de antes. La letra
+  pide un espacio únicamente entre número y número, así que lo reescribí con un bool que
+  saltea el separador en el primero. Ahora la salida coincide byte a byte con los cuatro
+  ejemplos de la letra; antes solo coincidía si se recortaban los espacios finales.
+- Limpieza de la entrega: saqué los includes que venían en el template y no usamos  
+  de los ejercicios 6, 8 y 9, porque en el obligatorio 1
+  nos marcaron un include sin usar. Borré los bloques de instrucciones de los tres .md.
+- Verificación completa: recompilé los cuatro ejercicios hechos sin warnings y volví a correr
+  los 18 ejemplos de la letra, los 18 pasan. También los tamaños máximos.
+- Queda pendiente el ejercicio 10 y su justificación de órdenes.

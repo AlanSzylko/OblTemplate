@@ -1,12 +1,5 @@
 # Justificación de órdenes — Obligatorio 2
 
-> **Instrucciones** (borrar esta sección antes de entregar): para cada ejercicio cuya
-> letra plantea restricciones de órdenes (tiempo o espacio), justificar brevemente por
-> qué la solución cumple, indicando qué estructuras de datos o algoritmos se utilizaron.
-> Ejemplo: "La letra exige inserción en O(log n); usamos un min-heap sobre arreglo,
-> donde flotar/hundir recorren a lo sumo la altura del árbol". Si un ejercicio no tiene
-> restricciones de órdenes, indicarlo.
-
 ## Ejercicio 6
 - La letra exige una estrategia greedy, O(N) en tiempo y O(N) en espacio.
 - Justificación: se cuentan las placas en un arreglo indexado por el número grabado, de tamaño
@@ -56,5 +49,8 @@
 - En la práctica, con K = 1000 la solución corre en unos 150 ms.
 
 ## Ejercicio 10
-- Sin restricciones de órdenes. / Justificación: ...
-
+- La letra exige backtracking y que la solución realice las podas posibles. No fija una
+  restricción de orden temporal, pero pide que cada test se resuelva en el orden de los
+  segundos, y avisa que con 10 cifras un número puede superar el rango de un entero de
+  32 bits.
+- Justificación: Flta
