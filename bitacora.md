@@ -92,3 +92,11 @@
   contrastados contra la fuerza bruta.
 - Usé Claude en esta sesión: para interpretar la letra, para verificar si la ventaja se podía
   acotar (hizo los experimentos con los contraejemplos).
+
+## 2026-11-24 — Tiago
+- Lei la letra del ejercicio 10. Me fue muy dificil poder modelar el ejercicio con backtracking solo. 
+  Discuti con claude la estrategia, pidiendole que me guie a pensarlo yo, en vez de que me de la solucion.
+  La forma que terminamos utilizando es: resolver la suma columna por columna desde las unidades, como a 
+  mano, probando dígitos para las letras de los sumandos y deduciendo la letra del resultado con 
+  (suma + acarreo) % 10. Así podemos podar apenas una columna no cierra, en vez de llenar todas las 
+  letras y verificar al final. Inclui el template de backtracking visto en clase.
