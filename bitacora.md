@@ -10,6 +10,9 @@
   condición `arr1[r] > arr2[j]*2` dentro del while.
 - Usé Claude para resolver errores de compilación del cin y el cout; me ayudó a darme
   cuenta de que faltaba el `using namespace std`.
+- (Agregado 25/11)  Trabajé el ejercicio 7 en el repo del Obl 1, antes de que armáramos este. 
+  Después lo pasamos acá, por eso en el historial de git el código aparece por primera vez en 
+  el commit de Alan del 02/11.
 
 ## 2026-11-02 — Alan
 - Leí la letra del ejercicio 8. Al principio confundí las 4 categorías con la cantidad de
