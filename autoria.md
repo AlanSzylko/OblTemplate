@@ -39,5 +39,10 @@ propuso la función de conteo con dos punteros que reemplaza ese ciclo.
   el modelo discutido.
 
 ## Ejercicio 10
-- Implementación íntegramente propia, sin fuentes externas.
-
+- Estructura de la función `backtracking` basada en el template de backtracking visto en
+  clase. El enfoque columna por columna desde las unidades se razonó por cuenta propia.
+- IA generativa: Claude. Consultas: estrategia para modelar el problema con backtracking
+  (le pedimos que guiara el razonamiento en vez de dar la solución; de ahí salió deducir la
+  letra del resultado con (suma + acarreo) % 10 para podar apenas una columna no cierra);
+  casos que faltaban en `puedoAplicarMovimiento`; generación de tests contra fuerza bruta
+  (no se entregan); y ayuda para redactar la justificación del orden. 
