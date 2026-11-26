@@ -15,18 +15,22 @@
 
 
 ## Ejercicio 7
-- Merge sort basado en la implementación vista y discutida en clase, adaptado para contar las remontadas épicas.
+- Merge sort basado en la implementación vista y discutida en clase, adaptado para contar las 
+  remontadas épicas.
 - IA generativa: Claude. Primera consulta (Tiago): errores de compilación con `cin`/`cout`;
 nos indicó que faltaba `using namespace std`.
-- IA generativa: Claude. Segunda consulta (Alan): revisión del ejercicio contra las restricciones de órdenes de la
-letra. Detectó que el conteo dentro del `intercalar` era cuadrático y que el contador en`int` se podia desbordar, y 
-propuso la función de conteo con dos punteros que reemplaza ese ciclo.
+- IA generativa: Claude. Segunda consulta (Alan): revisión del ejercicio contra las restricciones 
+  de órdenes de la letra. Detectó que el conteo dentro del `intercalar` era cuadrático y que el 
+  contador en`int` se podia desbordar, y propuso la función de conteo con dos punteros que reemplaza 
+  ese ciclo.
 
 ## Ejercicio 8
 - Diseño de la solución propio: el modelo del estado (producto, peso libre y los cuatro
   cupos) y la recurrencia los razonamos nosotros.
 - IA generativa: Claude. Consultas: interpretación de la letra, qué datos forman el estado
-  del problema, sintaxis de `cin >>`  y revisión de errores sobre código propio ya escrito. Uso: explicaciones y detección de bugs en arreglos de tamaño 4 en lugar de N, las correcciones las aplicamos nosotros.
+  del problema, sintaxis de `cin >>`  y revisión de errores sobre código propio ya escrito. 
+  Uso: explicaciones y detección de bugs en arreglos de tamaño 4 en lugar de N, las correcciones
+  las aplicamos nosotros.
 
 ## Ejercicio 9
 - Modelo del estado (ronda, ventaja de goles, si bailó en el tiro anterior) razonado en

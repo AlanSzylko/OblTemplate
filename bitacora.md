@@ -88,6 +88,12 @@
 - Usé Claude en esta sesión: para interpretar la letra, para verificar si la ventaja se podía
   acotar (hizo los experimentos con los contraejemplos).
 
+- (Agregado 26/11, Tiago) Revisando la letra antes de la entrega: la restricción del
+  ejercicio es O(K²) en tiempo y espacio, no O(K) como se anotó arriba; fue un error de
+  lectura. La duda queda resuelta: la versión O(K²) que implementamos cumple lo pedido, y los
+  experimentos que mostraron que la ventaja no se puede acotar a una constante sirven para
+  justificar por qué el estado necesita esa dimensión.
+
 ## 2026-11-24 — Tiago
 - Lei la letra del ejercicio 10. Me fue muy dificil poder modelar el ejercicio con backtracking solo. 
   Discuti con claude la estrategia, pidiendole que me guie a pensarlo yo, en vez de que me de la solucion.
