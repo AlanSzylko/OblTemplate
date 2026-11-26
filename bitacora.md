@@ -87,7 +87,6 @@
   contrastados contra la fuerza bruta.
 - Usé Claude en esta sesión: para interpretar la letra, para verificar si la ventaja se podía
   acotar (hizo los experimentos con los contraejemplos).
-
 - (Agregado 26/11, Tiago) Revisando la letra antes de la entrega: la restricción del
   ejercicio es O(K²) en tiempo y espacio, no O(K) como se anotó arriba; fue un error de
   lectura. La duda queda resuelta: la versión O(K²) que implementamos cumple lo pedido, y los
