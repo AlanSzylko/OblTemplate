@@ -24,6 +24,7 @@ bool esSolucion(int col, int acarreo) {
     return col == cantCols && acarreo == 0;
 }
 
+//podas dentro
 
 bool puedoAplicarMovimiento(int sumando, int col, int suma, int acarreo, int d) {
     if (col == cantCols) return false;
@@ -62,8 +63,25 @@ bool esMenor(long long actual[]) {
     return false;                                                
 }
 
+// poda
+
+long long cotaInferiorResultado() {
+    long long n = 0;
+    for (int i = 0; i < resultado.size(); i++) {
+        int L = resultado[i] - 'A';
+        int d = valor[L];
+        if (d == -1) {
+            d = noPuedeSer0[L] ? 1 : 0;
+            while (d < 9 && usado[d]) d++;
+        }
+        n = n * 10 + d;
+    }
+    return n;
+}
+
 // Función principal de backtracking
 void backtracking(int sumando, int col, int suma, int acarreo) {
+    if (hayMejor && cotaInferiorResultado() > mejor[K]) return;
     if (esSolucion(col, acarreo)) {
         long long actual[6];
         for (int j = 0; j < K; j++) actual[j] = numero(palabras[j]);
@@ -110,8 +128,6 @@ int main()
         for (int i = 0; i < resultado.size(); i++) {
             letraResultadoColumna[i] = resultado[resultado.size() - 1 - i] - 'A';
         }
-
-
         for (int l = 0; l < 26; l++) {
             valor[l] = -1;     
             noPuedeSer0[l] = false;
@@ -125,8 +141,13 @@ int main()
             noPuedeSer0[resultado[0] - 'A'] = true;         // primera letra del resultado
         }
         for (int d = 0; d < 10; d++) usado[d] = false;
-
+        
         bool imposible = false;
+        int maxLargo = 0;
+        for (int j = 0; j < K; j++) {
+            if (palabras[j].size() > maxLargo) maxLargo = palabras[j].size();
+        }
+        if (resultado.size() > maxLargo + 1) imposible = true;
         for (int j = 0; j < K; j++) {
             if (palabras[j].size() > resultado.size()) imposible = true;
         }
@@ -135,7 +156,8 @@ int main()
         if (!imposible) backtracking(0, 0, 0, 0);
         if (!hayMejor) {
             cout << "imposible" << endl;
-        } else {
+        } 
+        else {
             for (int i = 0; i < K; i++) {
                 if (i > 0) cout << " + ";
                 cout << mejor[i];

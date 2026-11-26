@@ -128,3 +128,16 @@
   También me ayudó para explicar el Orden del ejercicio, ya que no estaba seguro si poniendo peor caso
   O(10!/(10−L)!) era suficiente.
 
+  ## 2026-11-26 — Tiago
+- Revisión final de la entrega contra la letra. Usé Claude para hacer un cross check: compiló
+  los cinco ejercicios con el comando de la letra, corrió los 21 ejemplos y los comparó contra
+  fuerza bruta en casos random y con entradas de tamaño máximo. Todos pasan.
+- Rearmé el zip con solo los cinco `.cpp` y los tres `.md` en la raíz, como pide la letra.
+- Saqué dos includes sin usar del ejercicio 10 (`<cassert>` y `<limits>`), por lo mismo que
+  nos marcaron en el obligatorio 1.
+- Corregí la autoría del ejercicio 10, que faltaba.
+- Agregué una aclaración en la entrada de Alan del 22/11: la letra del ejercicio 9 pide
+  O(K²), no O(K).
+- Agregué un par de podas faltantes del ejercicio 10, que ayudan a bajar de 5s a 1s-2s.
+
+

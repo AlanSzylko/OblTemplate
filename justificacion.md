@@ -51,12 +51,20 @@
   dígito a cada letra y volviendo atrás cuando algo no cierra. Podas: la letra del resultado
   no se prueba sino que se deduce de (suma + acarreo) % 10, y si no coincide se corta la rama
   en esa columna; no se repiten dígitos; no se prueba 0 en letras iniciales de palabras
-  largas; si un sumando es más largo que el resultado se responde "imposible" sin buscar; y
-  si se terminan las columnas con acarreo sobrante no quedan movimientos válidos.
+  largas; si un sumando es más largo que el resultado, o si el resultado tiene más cifras
+  que el sumando más largo más una (con a lo sumo 5 sumandos la suma no llega), se responde
+  "imposible" sin buscar; y si se terminan las columnas con acarreo sobrante no quedan
+  movimientos válidos.
+- Poda por mejor solución: no se corta en la primera solución porque hay que imprimir la
+  menor, así que se guarda la mejor encontrada (por resultado y después por sumandos en
+  orden). En cada llamada se calcula el menor resultado que todavía puede salir de la rama:
+  las letras del resultado ya asignadas mantienen su dígito y las demás toman el menor
+  dígito libre. Si esa cota ya es mayor que el resultado de la mejor solución, la rama no
+  puede ganar y se corta. La cota se vuelve más precisa a medida que se asignan letras; en
+  acertijos con muchas soluciones baja el tiempo a menos de un tercio.
 - En el peor caso se exploran asignaciones de hasta 10 letras a 10 dígitos (como mucho 10!
-  por acertijo), pero con las podas cada acertijo se resuelve en milisegundos. No se corta
-  en la primera solución porque hay que imprimir la menor: se recorren todas y se guarda la
-  menor por resultado y después por sumandos en orden. Los valores se calculan en long long.
+  por acertijo), pero con las podas cada acertijo se resuelve en milisegundos. Los valores
+  se calculan en long long.
 - Espacio O(1): arreglos de tamaño fijo (26 letras, 10 dígitos, tabla de 5 x 10), más la pila
   de recursión, que tiene como mucho una llamada por letra de cada columna.
-- En la práctica, 100 acertijos de 5 sumandos de 10 letras tardan alrededor de 1 segundo.
+- En la práctica, 100 acertijos de 5 sumandos de 10 letras tardan entre 1 y 2 segundos.
