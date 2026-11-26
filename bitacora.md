@@ -128,7 +128,7 @@
   También me ayudó para explicar el Orden del ejercicio, ya que no estaba seguro si poniendo peor caso
   O(10!/(10−L)!) era suficiente.
 
-  ## 2026-11-26 — Tiago
+## 2026-11-26 — Tiago
 - Revisión final de la entrega contra la letra. Usé Claude para hacer un cross check: compiló
   los cinco ejercicios con el comando de la letra, corrió los 21 ejemplos y los comparó contra
   fuerza bruta en casos random y con entradas de tamaño máximo. Todos pasan.
